@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <title>KUCSA Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/x-icon" href="image/favicon.ico">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A==" crossorigin="anonymous"
+    referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+  <header class="header" id="navigation-menu">
+    <div class="container">
+      <nav>
+        <a href="#" class="logo"> <img src="image/logo_k.png" alt=""> </a>
+
+        <ul class="nav-menu">
+          <!-- <li> <a href="#home" class="nav-link" style="cursor: pointer;">Home</a> </li> -->
+          <!-- <li> <a href="#about" class="nav-link">About</a> </li> -->
+          <li> <a href="https://brian-adam.netlify.app/" class="nav-link">Home</a> </li>
+          <li> <a href="https://docs.google.com/forms/d/e/1FAIpQLSeDlrjGBNMGnmLFHbunb7_tM13V4K9Aal7zqiWhoCl5ARAcEQ/viewform?usp=sf_link" class="nav-link">BK Membership</a> </li>
+          <li> <a href="https://docs.google.com/forms/d/e/1FAIpQLSeMtR5aXatCzFeEmU6hwfLMFZ4P6R_Hjd9M4yc8IVnxaCUb6Q/viewform?usp=sf_link" class="nav-link">BK Presentation</a> </li>
+          <li> <a href="https://wa.link/2oohx5" class="nav-link">Contact Us</a> </li>
+        </ul>
+
+        <div class="hambuger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <script>
+    const hambuger = document.querySelector('.hambuger');
+    const navMenu = document.querySelector('.nav-menu');
+
+    hambuger.addEventListener("click", mobileMenu);
+
+    function mobileMenu() {
+      hambuger.classList.toggle("active");
+      navMenu.classList.toggle("active");
+    }
+
+    const navLink = document.querySelectorAll('.nav-link');
+    navLink.forEach((n) => n.addEventListener("click", closeMenu));
+
+    function closeMenu() {
+      hambuger.classList.remove("active");
+      navMenu.classList.remove("active");
+    }
+  </script>
+
+  <section class="home" id="home">
+    <div class="head_container">
+      <div class="box">
+        <div class="text">
+          <h1>KUCSA WEBSITE</h1>
+          <button> <a href="image/main.pdf" style="color: white; font-weight: 800;">DOWNLOAD CONSTITUTION</a> </button>
+        </div>
+      </div>
+      <div class="image">
+        <img src="image/home1.jpg" class="slide">
+      </div>
+      <div class="image_item">
+        <img src="image/home1.jpg" alt="" class="slide active" onclick="img('image/home1.jpg')">
+        <img src="image/home2.jpg" alt="" class="slide" onclick="img('image/home2.jpg')">
+        <img src="image/home3.jpg" alt="" class="slide" onclick="img('image/home3.jpg')">
+        <img src="image/home4.jpg" alt="" class="slide" onclick="img('image/home4.jpg')">
+      </div>
+    </div>
+  </section>
+  <script>
+    function img(anything) {
+      document.querySelector('.slide').src = anything;
+    }
+
+    function change(change) {
+      const line = document.querySelector('.image');
+      line.style.background = change;
+    }
+  </script>
+  <section class="book">
+    <div class="container flex">
+      <div class="input grid">
+        <div class="box">
+          <label>Time-in:</label>
+          <h3>6:30pm</h3>
+        </div>
+        <div class="box">
+          <label>Time-out:</label>
+          <h3>8:30pm</h3>
+        </div>
+        <div class="box">
+          <label>Location:</label> <br>
+          <h3>Main Campus</h3>
+        </div>
+        <div class="box">
+          <label>Room:</label> <br>
+          <h3>Sakagwa-25</h3>
+        </div>
+      </div>
+      <div class="search">
+        <h3>Teusday  & Thursday <br>
+        
+        <h2>Meetings</h2>
+        </h3>
+      </div>
+    </div>
+  </section>
+  <section class="about top" id="about">
+    <div class="container flex">
+      <div class="left">
+        <div class="img">
+          <img src="image/logo_k.png" alt=""  class="image1">
+          <!-- <img src="image/c.jpg" alt="" class="image2"> -->
+        </div>
+      </div>
+      <div class="right">
+        <div class="heading">
+          <h5>About KUCSA</h5>
+          <h2>& Why KUCSA</h2>
+          <p>Kisii University Computing Students Association is 
+          exploring the tech potential of its members to 
+          introduce plans and programs that are aimed at 
+          exposing our members to the job market and 
+          trends, a voice to the surrounding society and a 
+          direct engagements professionally across Africa 
+          and global society that leads to future career 
+          growth and employability. </p>
+          <h3>We</h3>
+          <p>1. Give our members chance to interact with our alumni groups professionally. <br>
+            2. Expand the territorial thinking of  a global society problems that should be addressed through technology by allowing participants engage in  knowing tech info in other countries. <br>
+            3. Invite different professionals in the tech space to engage with our members at different levels. <br>
+            4. Provide transformational tables and networking platforms to allow members interact and do common projects with people from different parts of the world. <br>
+            5.Provide a platform to share about various innovative ideas  and assist in faster implementation in different parts of the world. <br>
+            6. Provide a platform where employers, innovators, investors and mentors can help promote different ideas and advice accordingly. <br>
+            </p>
+            <button> <a href="image/main.pdf" class="btn1" style="color: white; font-weight: 800; padding: 10px; border-radius: 10px;">DOWNLOAD CONSTITUTION</a> </button>
+        
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="wrapper top">
+    <div class="container">
+      <div class="text">
+        <h2>Modules Web Provide</h2>
+        <p>Modules mentioned below have various module leaders that work together to make sure that every member in the association got somethinhg to move out with ready for job market.</p>
+
+        <div class="content">
+          <div class="box flex">
+            <i class="fas fa-code"></i>
+            <span>Web design</span>
+          </div>
+          <div class="box flex">
+            <i class="fas fa-code"></i>
+            <span>Web Dev</span>
+          </div>
+          <div class="box flex">
+            <i class="fas fa-code"></i>
+            <span>CyberSecurity</span>
+          </div>
+          <div class="box flex">
+            <i class="fas fa-code"></i>
+            <span>ML</span>
+          </div>
+          <div class="box flex">
+            <i class="fas fa-code"></i>
+            <span>Soft/Hardware</span>
+          </div>
+          <div class="box flex">
+            <i class="fas fa-code"></i>
+            <span>GDG</span>
+          </div>
+          <div class="box flex">
+            <i class="fas fa-code"></i>
+            <span>HUAWEI</span>
+          </div>
+          <div class="box flex">
+            <i class="fas fa-code"></i>
+            <span>NCD</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="room top" id="room">
+    <div class="container">
+      <div class="heading_top flex1">
+        <div class="heading">
+          <h5>SENIOR KUCSA EXECUTIVE </h5>
+          <h2>2022-2023</h2>
+        </div>
+        <div class="button">
+          <a href="gallery.html" class="btn1" style="color: white; padding: 15px; border-radius: 10px;">Gallary</a>
+        </div>
+      </div>
+
+      <div class="content grid">
+        <div class="box">
+          <div class="img">
+            <img src="image/maake.png" style="margin-bottom: 10px;" alt="">
+            <div class="text">
+              <h3>Patron</h3>
+              <p>Dr.<span> Maake</span> </p>
+            </div>
+            <img src="image/chair.jpeg" style="margin-bottom: 10px;" alt="">
+          </div>
+          <div class="text">
+            <h3>Mr. Chair</h3>
+            <p>Victor<span> Otieno</span> </p>
+          </div>
+        </div>
+        <div class="box">
+          <div class="img">
+            <img src="image/betty.png" style="margin-bottom: 10px;" alt="">
+            <div class="text">
+              <h3>Vice-Chair</h3>
+              <p>Beth<span> Nyambura</span> </p>
+            </div>
+            <img src="image/banner.jpg" style="margin-bottom: 10px;" alt="">
+          </div>
+          <div class="text">
+            <h3>Secretary General</h3>
+            <p>Brian<span> Adams</span> </p>
+          </div>
+        </div>
+        <div class="box">
+          <div class="box">
+            <div class="img">
+              <img src="image/shaila.jpeg" style="margin-bottom: 10px;" alt="">
+              <div class="text">
+                <h3>Secretary </h3>
+                <p>Shaila<span></span> </p>
+              </div>
+              <img src="image/vick.jpg" style="margin-bottom: 10px;" alt="">
+            </div>
+            <div class="text">
+              <h3> Organizing Secretary</h3>
+              <p>Victor<span> Motanya</span> </p>
+            </div>
+          </div>
+          <div class="img">
+            <img src="image/vicky.jpeg" style="margin-bottom: 10px;" alt="">
+            <div class="text">
+              <h3>Treasurer</h3>
+              <p>Victor<span> Kyalo</span> </p>
+            </div>
+            <img src="image/bravo.jpeg" style="margin-bottom: 10px;" alt="">
+          </div>
+          <div class="text">
+            <h3>Publicity Secretary</h3>
+            <p>Kevine<span></span> </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="wrapper wrapper2 top">
+    <div class="container">
+      <div class="text">
+        <div class="heading">
+          <h5>Google Developers Group</h5>
+          <h2>GDG</h2>
+        </div>
+
+        <div class="para">
+          <p>When you join a Google Developer Group, you'll have the opportunity to learn new skills in a variety of formats. You’ll also meet local developers virtually or in-person with similar interests in technology. The community prides itself on being an inclusive environment where everyone and anyone interested in tech - from beginner developers to Advance.</p>
+
+          <div class="box flex">
+            <div class="img">
+              <img src="image/c.jpg" alt="">
+            </div>
+            <div class="name">
+              <h5>LeadBy</h5>
+              <h5>Andrew Mbugua</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="restaurant top" id="restaurant">
+    <div class="container flex">
+      <div class="left">
+        <img src="image/re.png" alt="">
+      </div>
+      <div class="right">
+        <div class="text">
+          <h2>Near Certified Developer</h2>
+          <p>Near is LeadBy <a href="https://brian-adam.netlify.app/" style="color: purple; font-weight: 800; text-decoration: underline;">Brian Adams</a>: Here at <a href="https://www.near.university/" style="color: purple; font-weight: 800; text-decoration: underline;">NEAR UNIVERSITY</a> You can learn, earn and connect among friends in the NEAR community. <br>
+          <h3>Here are some of near featured programs</h3>
+          </p>
+        </div>
+        <div class="accordionWrapper">
+          <div class="accordionItem open">
+            <h2 class="accordionIHeading">NEAR Certified Analyst</h2>
+            <div class="accordionItemContent">
+              <p>This course is an opportunity for technical and non-technical users alike to learn about the potential of the Open Web and propose meaningful solutions fordevelopment.</p>
+            </div>
+          </div>
+          <div class="accordionItem close">
+            <h2 class="accordionIHeading">NEAR Certified Developer</h2>
+            <div class="accordionItemContent">
+              <p>This course is an opportunityfor web Developersto earn a certificate of completion that represents the ability to design,develop,test and deploy smart contracts on the NEAR platform.</p>
+            </div>
+          </div>
+          <div class="accordionItem close">
+            <h2 class="accordionIHeading">NEAR Certified Entrepreneur</h2>
+            <div class="accordionItemContent">
+              <p>Learn how develop a blockchain enterprise from scratch</p>
+            </div>
+          </div>
+          <div class="accordionItem close">
+            <h2 class="accordionIHeading">For More Information</h2>
+            <div class="accordionItemContent">
+              <p>mail to> brianadem2@gmail.com <br>
+                WhatsApp/calls/SMS No> 0111524408
+              <br>
+            Portfolio> <a href="http://brian-adam.netlify.app" target="_blank">brian-adams</a></p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfcao-BvU-gZV5EoaqNuPYoLkISH6-t3PpoaoUqrLF1_2FmgA/viewform?usp=sf_link">Register here</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+    var accItem = document.getElementsByClassName('accordionItem');
+    var accHD = document.getElementsByClassName('accordionIHeading');
+
+    for (i = 0; i < accHD.length; i++) {
+      accHD[i].addEventListener('click', toggleItem, false);
+    }
+
+    function toggleItem() {
+      var itemClass = this.parentNode.className;
+      for (var i = 0; i < accItem.length; i++) {
+        accItem[i].className = 'accordionItem close';
+      }
+      if (itemClass == 'accordionItem close') {
+        this.parentNode.className = 'accordionItem open';
+      }
+    }
+  </script>
+
+
+
+  <section class="gallary mtop " id="gallary">
+    <div class="container">
+      <div class="heading_top flex1">
+        <div class="heading">
+          <h5>WELCOME TO KUCSA PHOTO GALLERY</h5>
+          <h2>Contact Admin To Feature</h2>
+        </div>
+        <div class="button">
+          <button class="btn1"> <a href="gallery.html" style="color: white;"> VIEW GALLERY</a> </button>
+        </div>
+      </div>
+
+      <div class="owl-carousel owl-theme">
+        <div class="item">
+          <img src="image/mesh.jpeg" alt="">
+        </div>
+        <div class="item">
+          <img src="image/g2.jpg" alt="">
+        </div>
+        <div class="item">
+          <img src="image/g3.jpg" alt="">
+        </div>
+        <div class="item">
+          <img src="image/both.jpeg" alt="">
+        </div>
+        <div class="item">
+          <img src="image/graduate.jpeg" alt="">
+        </div>
+        <div class="item">
+          <img src="image/ul.jpeg" alt="">
+        </div>
+        <div class="item">
+          <img src="image/comp.jpeg" alt="">
+        </div>
+        <div class="item">
+          <img src="image/sananka.jpeg" alt="">
+        </div>
+        <div class="item">
+          <img src="image/pic10.jpeg" alt="">
+        </div>
+        <div class="item">
+          <img src="image/g5.jpg" alt="">
+        </div>
+        <div class="item">
+          <img src="image/g6.jpg" alt="">
+        </div>
+        <div class="item">
+          <img src="image/ousa.jpeg" alt="">
+        </div>
+        <div class="item">
+          <img src="image/g7.jpg" alt="">
+        </div>
+        <div class="item">
+          <img src="image/both.jpeg" alt="">
+        </div>
+        <div class="item">
+          <img src="image/g8.jpg" alt="">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js" integrity="sha512-gY25nC63ddE0LcLPhxUJGFxa2GoIyA5FLym4UJqHDEMHjp8RET6Zn/SHo1sltt3WuVtqfyxECP38/daUc/WVEA==" crossorigin="anonymous"
+    referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"
+    referrerpolicy="no-referrer"></script>
+  <script>
+    $('.owl-carousel').owlCarousel({
+      loop: true,
+      margin: 10,
+      nav: true,
+      dots: false,
+      navText: ["<i class='fas fa-chevron-left'></i>", "<i class='fas fa-chevron-right'></i>"],
+      responsive: {
+        0: {
+          items: 1
+        },
+        768: {
+          items: 2
+        },
+        1000: {
+          items: 4
+        }
+      }
+    })
+  </script>
+<div class="fixed-whatsApp">
+  <a href=""> <img src="image/whatsapp.png" alt="" style="z-index: 10; width: 60px; height: 60px; border-radius: 50%; position: fixed;"> </a>
+</div>
+
+
+  <!-- <section class="map top">
+    <iframe src="https://duckduckgo.com/?q=-0.6902909609193423%2C+34.781477945978054&ia=web&iaxm=maps" loading="lazy" height="400px"></iframe>
+  </section> -->
+
+
+  <footer>
+    <div class="container grid top">
+      <div class="box">
+        <h3>Membership</h3>
+        <p>If you want to be a <b>full KUCSA Member</b>  MUST have register with treasurer at a cost of 100/= new member and annual renewal of membership of 50/= </p>
+
+        <p>Accepted payment methods</p>
+        <div class="payment grid">
+
+          <h3> <span style="color: green; font-weight: 900; font-size: 24px; margin: 5px;">M</span>pesa 0708464263</h3>
+          <img src="https://img.icons8.com/color/48/000000/visa.png" />
+          
+        </div>
+      </div>
+      
+
+      <div class="box">
+        <h3>Recent News</h3>
+
+        <ul>
+          <li>We are planning a trip to:</li>
+          <li>MOMBASA</li>
+          <li>TANZANIA</li>
+          <li>UGANDA</li>
+        </ul>
+      </div>
+
+      <div class="box">
+        <h3>Subscribe for new events</h3>
+        <ul>
+          <li>ATLESSIAN</li>
+          <li>NCD</li>
+          <li>GDG</li>
+          <li>GDSC</li>
+          <li>INNOVATION</li>
+        </ul>
+      </div>
+
+      <div class="box">
+        <h3>Contact Us</h3>
+
+        <ul>
+          <li>KUCSA, KSU, KISII, NAIROBI, KENYA</li>
+          <li><i class="far fa-envelope"></i>kucsa@gmail.com</li>
+          <li><i class="far fa-phone-alt"></i>0708086604</li>
+          <li><i class="far fa-phone-alt"></i>0111524408 </li>
+          <li><i class="far fa-comments"></i>0748290170 </li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

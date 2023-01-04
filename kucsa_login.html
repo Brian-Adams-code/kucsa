@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <script>
+      function AddRow()
+    {
+      var usernamee = document.getElementById("usernamee").value;
+      var passwordd = document.getElementById("passwordd").value;
+      var email = document.getElementById("email").value;
+      var phone = document.getElementById("phone").value;
+      if (usernamee==""|| passwordd==""|| email==""|| phone=="") {
+        return false;
+      }
+      else {
+      google.script.run.AddRecord(usernamee,passwordd,email,phone);
+      document.getElementById("page2_id1").className = "page2_id1-off";
+      document.getElementById("page3_id1").className = "page3_id1";
+     }
+    }
+
+     function LoginUser()
+    {
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+    google.script.run.withSuccessHandler(function(output) 
+    {
+      if(output == 'TRUE')
+      {
+         var url1 ='http://kucsa.netlify.app';
+         var winRef = window.open(url1);
+         winRef ? google.script.host.close() : window.onload=function(){document.getElementById('url').href = url1;}    
+      }
+      else if(output == 'FALSE')
+      {
+        document.getElementById("errorMessage").innerHTML = "Invalid data";     
+      }    
+    }).checkLogin(username, password);
+    }
+    
+function function1(){
+    document.getElementById("page1_id1").className = "page1_class1-off";
+    document.getElementById("page2_id1").className = "page2_id1";
+}
+ 
+function function3(){ 
+  document.getElementById("page3_id1").className = "page3_id1-off";
+  document.getElementById("page1_id1").className = "page1_id1"; 
+}
+
+  </script>
+  <style>
+
+/*page1*/
+.page1_class1-off{
+    display: none;
+  }
+
+
+/*page2*/
+.page2_class1{
+    display: none;
+  }
+
+.page2_id1-off{
+    display:none;
+}
+
+/*page3*/
+.page3_class1{
+    display:none;
+
+}
+.page3_id1-off{
+    display:none;
+}
+
+
+input[type=text]:hover{
+        border-bottom:2px solid black;
+      }
+input[type=number]:hover{
+        border-bottom:2px solid black;
+      }
+input[type=password]:hover{
+        border-bottom:2px solid black;
+      }
+
+.btn:hover{
+   background:red;
+   cursor:pointer;
+}
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <br><br>
+<!--page1-->
+<center>
+ <div class="page1_class1" id="page1_id1" style="background:#111;color:white; border:1px solid gray;border-radius: 20px;width: 80%;padding-top: 10px;padding-bottom: 20px;padding-left: 20px;padding-right: 20px;text-align:center; height:70%"> 
+    <h1>Login Form</h1>
+    <br>
+    <input type="text" id="username" placeholder="Username" style="border-top: none;border-right: none;border-left: none;outline: none; text-align: left;font-size:0.9em ;width: 90%; outline:none; background:transparent; color:white; padding:20px; font-weight:bold;"/><br>
+    <br>
+    <input type="password" id="password" placeholder="Password" style="border-top: none;border-right: none;border-left: none;outline: none; text-align: left;font-size:0.9em ;width: 90%;  outline:none; background:transparent; color:white;  padding:20px;font-weight:bold;"/>
+    <br><span id="errorMessage" style="color: red" ></span><br>
+    <input type="submit" class="btn" value="Login" onclick="LoginUser()"  style="padding-top: 1px;padding-bottom: 1px;padding-left: 10px;padding-right: 10px;width: 40%; padding:20px;font-size: 0.9em;  outline:none; background:transparent; color:white; font-weight:bold;" /><br>
+    <br>
+    <b>If you don't have an account,</b><input type="button" onClick="function1()" value="Create New" style="margin-top: 5px;font-weight:bold;  outline:none; background:transparent; color:white; " />
+ </div>
+
+<!--page2-->
+<div class="page2_class1" id="page2_id1" style="background:#111;border:2px solid gray;border-radius: 20px;width: 80%;padding-top:color:white; 10px;padding-bottom: 20px;padding-left: 20px; padding:20px; padding-right: 20px;">
+ <h1 style="color:white;">Create Account with KUCSA</h1>
+    <input type="text" id="usernamee" placeholder="Name" style="border-top: none;border-right: none;border-left: none;outline: none; text-align: left;font-size:0.9em ;width: 80%;height:70%; font-weight:bold;padding:20px;"/><br>
+    <br>
+    <input type="password" id="passwordd" placeholder="Create password" style="border-top: none;border-right: none;border-left: none;outline: none; text-align: left;font-size: 0.9;width: 80%;font-weight:bold;padding:20px;" /><br>
+        <br>
+    <input type="text" id="email" placeholder="Email" style="border-top: none;border-right: none;border-left: none;outline: none; text-align: left;font-size:0.9em ;width: 80%;font-weight:bold;padding:20px;"/><br>
+    <br>
+    <input type="number" id="phone" placeholder="Phone no." style="border-top: none;border-right: none;border-left: none;outline: none; text-align: left;font-size:0.9em ;width: 80%;font-weight:bold;padding:20px;" /><br><br>
+    <b style="color:red;">Password must contain letters and numbers. It will not work without letters and numbers.</b><br><br>
+    <input type="submit" value="Create" onclick="AddRow()" style="padding-top: 1px;padding-bottom: 1px;padding-left: 10px;padding-right: 10px;font-size: 0.9em; width: 40%; font-weight:bold;" />
+    <br>
+</div>
+
+<!--page3-->
+ <div class="page3_class1" id="page3_id1" style="background:none;border:2px solid gray;border-radius: 20px;width: 80%;padding-top: 30px;padding-bottom: 20px;padding-left: 20px;padding-right: 20px;"><center>
+    <h2 style="color:green;"> Your account has been successfully created. Login to your account</h2>
+    <input type="submit"  onClick="function3()" value="Login" style="font-weight:bold; width:40%; outline:none; padding:20px;"><br>
+ </div> 
+
+
+</center>
+
+<script src="main.js" type="text/javascript"></script>
+ </body>
+</html>
